@@ -1,8 +1,7 @@
 function creditToken() {
-  var cylinderFn = 32, // 128 for printing
   sphereFn = 96, // 256 for printing
   maskSphere = sphere({r: 180, center: true, fn: sphereFn, type: "geodesic"}),
-  dome = cylinder({r: 16, h: 3, center: true, fn: cylinderFn})
+  dome = centeredDisc(16, 3)
     .subtract(
       maskSphere
         .translate([0, 0, -180])
@@ -14,15 +13,15 @@ function creditToken() {
         .setColor(0.8, 0.8, 0.9)
     )
     .translate([0, 0, 0]),
-  ring = cylinder({r: 20, h: 3, center: true, fn: cylinderFn})
-    .subtract(cylinder({r: 16, h: 3, center: true, fn: cylinderFn}))
+  ring = centeredDisc(20, 3)
+    .subtract(centeredDisc(16, 3))
     .setColor(0.2, 0.2, 0.2),
-  protrudingRing = cylinder({r: 15.9, h: 1.8, center: true, fn: cylinderFn})
-    .subtract(cylinder({r: 14.9, h: 1.8, center: true, fn: cylinderFn}))
+  protrudingRing = centeredDisc(15.9, 1.8)
+    .subtract(centeredDisc(14.9, 1.8))
     .translate([0, 0, 1])
     .setColor(1, 1, 1),
-  ringFix = cylinder({r: 17, h: 1, center: true, fn: cylinderFn})
-    .subtract(cylinder({r: 15.8, h: 1, center: true, fn: cylinderFn}))
+  ringFix = centeredDisc(17, 1)
+    .subtract(centeredDisc(15.8, 1))
     .translate([0, 0, 1])
     .setColor(0.2, 0.2, 0.2),
   icon = 	creditIcon()
@@ -138,5 +137,4 @@ function main() {
       virusPower = virusPowerToken().scale([0.5, 0.5, 1]).translate([20, 0, 0]),
       tokens = [credit, virusPower];
   return tokens;
-  // return [virusPower];
 }
