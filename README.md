@@ -2,8 +2,8 @@
 ===========
 
 This repository contains some experiments in 3D printing. I'm using
-[OpenJSCAD](http://openjscad.org/) to design the models and export
-`.stl` files.
+[OpenJSCAD](http://openjscad.org/) to design the models and export STL
+files.
 
 ## Usage
 
@@ -12,6 +12,12 @@ You can drop the source files in this repository into the viewer at
 file, which you can then print. I used
 [a third party service](https://www.3dprint-uk.co.uk/) to print
 prototypes.
+
+The resolution on some of the curves is dropped for now to allow the
+models to render in a reasonable amount of time. Before generating the
+STL files and sending them to the printer make sure you increase the
+resolution. You'll spot a couple of comments in the Netrunner token
+file showing you what to change.
 
 ## Netrunner
 
